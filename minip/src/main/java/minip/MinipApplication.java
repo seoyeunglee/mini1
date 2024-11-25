@@ -1,4 +1,4 @@
-package mini;
+package minip;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,15 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @SpringBootApplication
-public class MiniApplication {
+public class MinipApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MiniApplication.class, args);
+		SpringApplication.run(MinipApplication.class, args);
 	}
 	
 	@GetMapping("/")
 	public String index() {
 		return "thymeleaf/index";
 	}
+	
 
 }
