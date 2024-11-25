@@ -26,8 +26,8 @@ public class UserCommand {
 	String memberAddr;
 	String memberAddrDetail;
 	String memberPost;
-	@NotBlank(message = "연락처을 입력하여 주세요.")
-	@Size(min = 11, max = 13)
+	@NotBlank(message = "연락처를 입력하여 주세요.")
+	@Size(min = 11, max = 23)
 	String memberPhone1;
 	String memberPhone2;
 	String gender;
@@ -36,5 +36,13 @@ public class UserCommand {
 	Date memberBirth;
 	@NotBlank(message = "이메일을 입력하여 주세요.")
 	String memberEmail;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	Date memberRegist;
+	
+	
+	public boolean isMemberPwEqualMemberPwCon() {
+		return memberPw.equals(memberPwCon);
+	}
 
 }
