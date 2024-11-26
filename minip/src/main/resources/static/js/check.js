@@ -28,7 +28,7 @@ $(function(){
 			type:"post",
 			url:"/checkRest/userEmailCheck",
 			dataType:"text",
-			data:{"userEmail":$("#userEamil").val()},
+			data:{"userEmail":$("#userEmail").val()},
 			success:function(result){
 				if(result == "1"){
 					$("#emailCheck").text("사용중인 이메일입니다.");

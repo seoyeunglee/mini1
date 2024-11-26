@@ -30,8 +30,6 @@ public class MemberJoinController {
 	
 	@GetMapping("userWrite")
 	public String userWrite(Model model) {
-		UserCommand userCommand = new UserCommand();
-		model.addAttribute("userCommand", userCommand);
 		return "thymeleaf/memberJoin/userForm";
 	}
 	
@@ -40,10 +38,12 @@ public class MemberJoinController {
 		if(result.hasErrors()) {
 			return "thymeleaf/memberJoin/userForm";
 		}
+		/*
 		if(!userCommand.isMemberPwEqualMemberPwCon()) {
 			result.rejectValue("memberPwCon", "memberCommand.memberPwCon", "비밀번호가 일치하지 않습니다.");
 			return "thymeleaf/memberJoin/userForm";
 		}
+		*/
 		memberJoinService.execute(userCommand);
 		return "thymeleaf/memberJoin/welcome";
 	}

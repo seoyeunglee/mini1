@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 
 import minip.command.UserCommand;
 import minip.domain.MemberDTO;
-import minip.repository.UserRepository;
+import minip.mapper.UserMapper;
 
 @Service
 public class MemberJoinService {
 	@Autowired
-	UserRepository userRepository;
+	UserMapper userMapper;
 	@Autowired
 	PasswordEncoder passwordEncoder;
 	
@@ -27,7 +27,7 @@ public class MemberJoinService {
 		dto.setMemberPw(encodePw);
 		
 		dto.setMemberPost(userCommand.getMemberPost());
-		userRepository.userInsert(dto);
+		userMapper.userInsert(dto);
 		}
 	}
 
